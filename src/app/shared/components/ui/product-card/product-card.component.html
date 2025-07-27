@@ -1,0 +1,44 @@
+<div
+  class="product flex flex-col justify-between h-[450px] sm:h-[400px] border border-gray-200 dark:border-gray-600 hover:border-purple-700 dark:hover:border-purple-500 p-4 rounded-xl hover:shadow-xl dark:hover:shadow-lg dark:hover:shadow-gray-800/30 transition-all duration-300 mb-4 group hover:-translate-y-2 bg-white dark:bg-gray-800"
+>
+  <a [routerLink]="['/productDetails', product.id]" class="block h-full">
+    <!-- Product Image -->
+    <div
+      class="w-full h-[200px] sm:h-[180px] flex items-center justify-center bg-gray-50 dark:bg-gray-700 rounded-lg"
+    >
+      <img
+        [src]="product.image"
+        class="w-full h-full object-contain p-2"
+        alt="{{ product.title }}"
+      />
+    </div>
+
+    <!-- Product Title -->
+    <h2
+      class="my-4 text-lg font-semibold text-purple-700 dark:text-purple-400 truncate"
+    >
+      {{ product.title.split(" ").splice(0, 2).join(" ") }}
+    </h2>
+
+    <!-- Price and Rating -->
+    <div class="flex justify-between items-center mb-3">
+      <p class="text-xl font-bold text-gray-900 dark:text-gray-100">
+        ${{ product.price }}
+      </p>
+      <span class="text-sm text-gray-500 dark:text-gray-400">
+        {{ product.rating.rate }} ({{ product.rating.count }})
+      </span>
+    </div>
+
+    <div class="icon__stars mb-3 text-yellow-400 dark:text-yellow-300">
+      @for (star of [1,2,3,4,5]; track star) {
+      <i [class]="getStarClass(star, product.rating.rate)"></i>
+      }
+    </div>
+
+    <!-- Product Description -->
+    <p class="text-gray-600 dark:text-gray-300 text-sm line-clamp-3">
+      {{ product.description.split(" ").splice(0, 10).join(" ") }}
+    </p>
+  </a>
+</div>

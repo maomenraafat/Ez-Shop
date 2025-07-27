@@ -1,0 +1,107 @@
+<div class="flex items-center gap-2 w-full max-w-2xl mx-auto mt-5">
+  <!-- Search Input -->
+  <div class="relative flex-1">
+    <input
+      [(ngModel)]="searchValue"
+      (input)="search()"
+      type="text"
+      placeholder="Search products..."
+      class="w-full px-4 py-2.5 rounded-lg border-2 border-gray-200 dark:border-gray-600 focus:border-purple-500 dark:focus:border-purple-400 focus:ring-2 focus:ring-purple-200/50 dark:focus:ring-purple-800/30 focus:outline-none transition-all duration-200 placeholder-gray-400 dark:placeholder-gray-500 text-gray-700 dark:text-gray-300 shadow-sm hover:border-purple-300 dark:hover:border-purple-400 bg-white dark:bg-gray-800"
+    />
+    <i
+      class="fa-solid fa-magnifying-glass absolute right-3 top-4 h-5 w-5 text-gray-400 dark:text-gray-500"
+    ></i>
+  </div>
+  <!-- Sort Dropdown -->
+  <div class="relative">
+    <button
+      (click)="toggleSortDropdown()"
+      class="flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-700/80 transition-colors duration-200 shadow-sm"
+    >
+      <!-- <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-5 w-5 text-purple-500 dark:text-purple-400"
+        viewBox="0 0 20 20"
+        fill="currentColor"
+      >
+        <path
+          d="M3 3a1 1 0 000 2h11a1 1 0 100-2H3zM3 7a1 1 0 000 2h5a1 1 0 000-2H3zM3 11a1 1 0 100 2h4a1 1 0 100-2H3zM13 16a1 1 0 102 0v-5.586l1.293 1.293a1 1 0 001.414-1.414l-3-3a1 1 0 00-1.414 0l-3 3a1 1 0 101.414 1.414L13 10.414V16z"
+        />
+      </svg> -->
+      <i class="fa-solid fa-sort text-purple-500 dark:text-purple-400"></i>
+      <span>Sort</span>
+    </button>
+
+    <!-- Dropdown Content -->
+    @if (showSortDropdown) {
+    <div
+      class="absolute right-0 mt-2 w-48 bg-white dark:bg-gray-800 rounded-md shadow-lg z-10 border border-gray-100 dark:border-gray-700"
+    >
+      <div class="py-1">
+        <button
+          (click)="sortProducts('price_asc')"
+          class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:text-purple-900 dark:hover:text-purple-200"
+        >
+          Price: Low to High
+        </button>
+        <button
+          (click)="sortProducts('price_desc')"
+          class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:text-purple-900 dark:hover:text-purple-200"
+        >
+          Price: High to Low
+        </button>
+        <button
+          (click)="sortProducts('name_asc')"
+          class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:text-purple-900 dark:hover:text-purple-200"
+        >
+          Name: A-Z
+        </button>
+        <button
+          (click)="sortProducts('name_desc')"
+          class="block w-full text-left px-4 py-2 text-sm text-gray-700 dark:text-gray-300 hover:bg-purple-500/10 dark:hover:bg-purple-400/10 hover:text-purple-900 dark:hover:text-purple-200"
+        >
+          Name: Z-A
+        </button>
+      </div>
+    </div>
+    }
+  </div>
+  <!-- Reset Button -->
+  <button
+    (click)="resetFilters()"
+    class="flex items-center gap-1.5 px-4 py-2.5 rounded-lg border border-gray-200 dark:border-gray-600 bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-50/80 dark:hover:bg-gray-700/80 transition-colors duration-200 shadow-sm"
+    [class.invisible]="!searchValue && !currentSortOption"
+  >
+    <!-- <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-5 w-5 text-gray-500 dark:text-gray-400"
+      viewBox="0 0 20 20"
+      fill="currentColor"
+    >
+      <path
+        fill-rule="evenodd"
+        d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z"
+        clip-rule="evenodd"
+      />
+    </svg> -->
+    <i class="fa-solid fa-xmark text-gray-500 dark:text-gray-400"></i>
+    <span>Reset</span>
+  </button>
+</div>
+@if(isLoading){
+<div class="h-screen mt-10"><app-loading-spinner></app-loading-spinner></div>
+} @else if (filteredProducts.length > 0) {
+<div
+  class="container mx-auto grid sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-5 gap-5 my-8"
+>
+  @for (product of filteredProducts; track $index) {
+  <app-product-card [product]="product"></app-product-card>
+  }
+</div>
+} @else {
+<div class="h-full my-7 flex justify-center items-center">
+  <p class="text-center text-purple-500 dark:text-purple-400 text-3xl">
+    No products found.
+  </p>
+</div>
+}

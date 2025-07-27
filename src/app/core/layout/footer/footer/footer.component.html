@@ -1,0 +1,80 @@
+<footer
+  class="bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 py-8 mt-10"
+>
+  <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+    <div
+      class="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left space-y-6 sm:space-y-0"
+    >
+      <!-- Logo & Branding -->
+      <div class="flex items-center space-x-3">
+        <span class="text-2xl font-bold text-purple-700 dark:text-purple-400"
+          >EZShop</span
+        >
+      </div>
+
+      <!-- Navigation Links -->
+      <nav class="flex space-x-6">
+        <a
+          routerLink="/home"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300 cursor-pointer"
+          >Home</a
+        >
+        <a
+          routerLink="/products"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300 cursor-pointer"
+          >Products</a
+        >
+        <a
+          routerLink="/about"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300 cursor-pointer"
+          >About</a
+        >
+        <a
+          routerLink="/contact"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300 cursor-pointer"
+          >Contact</a
+        >
+      </nav>
+
+      <!-- Social Media Icons -->
+      <div class="flex space-x-4">
+        <a
+          href="https://facebook.com"
+          target="_blank"
+          class="text-gray-600 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300 cursor-pointer"
+        >
+          <i class="fab fa-facebook-f text-xl"></i>
+        </a>
+        <a
+          href="https://twitter.com"
+          target="_blank"
+          class="text-gray-600 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300 cursor-pointer"
+        >
+          <i class="fab fa-twitter text-xl"></i>
+        </a>
+        <a
+          href="https://instagram.com"
+          target="_blank"
+          class="text-gray-600 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300 cursor-pointer"
+        >
+          <i class="fab fa-instagram text-xl"></i>
+        </a>
+        <a
+          href="https://linkedin.com"
+          target="_blank"
+          class="text-gray-600 dark:text-gray-400 hover:text-purple-700 dark:hover:text-purple-400 transition duration-300"
+        >
+          <i class="fab fa-linkedin-in text-xl"></i>
+        </a>
+      </div>
+    </div>
+
+    <!-- Divider -->
+    <div class="border-t border-gray-300 dark:border-gray-700 my-6"></div>
+
+    <!-- Copyright Section -->
+    <p class="text-center text-gray-600 dark:text-gray-400 text-sm">
+      &copy; {{ currentYear }} EZShop. All rights reserved.
+    </p>
+  </div>
+</footer>

@@ -1,0 +1,102 @@
+<nav
+  class="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 shadow-sm"
+>
+  <div class="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      <!-- Store Logo -->
+      <a routerLink="/" class="flex items-center space-x-2 rtl:space-x-reverse">
+        <span class="text-2xl font-bold text-purple-700 dark:text-purple-400"
+          >EZShop</span
+        >
+      </a>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        class="inline-flex items-center justify-center p-2 rounded-md text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 focus:outline-none focus:ring-2 focus:ring-purple-500 dark:focus:ring-purple-400 md:hidden"
+        aria-controls="navbar-menu"
+        aria-expanded="false"
+        (click)="toggleMenu()"
+      >
+        <span class="sr-only">Open main menu</span>
+        <!-- <svg
+          class="w-6 h-6"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          aria-hidden="true"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16"
+          />
+        </svg> -->
+        <i class="fa-solid fa-bars text-lg"></i>
+      </button>
+
+      <!-- Desktop Menu -->
+      <div
+        class="hidden md:flex md:items-center md:space-x-6 rtl:space-x-reverse"
+      >
+        <a
+          routerLink="/home"
+          routerLinkActive="text-purple-700 dark:text-purple-300 font-semibold"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors duration-200 cursor-pointer"
+          >Home</a
+        >
+        <a
+          routerLink="/about"
+          routerLinkActive="text-purple-700 dark:text-purple-300 font-semibold"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors duration-200 cursor-pointer"
+          >About</a
+        >
+        <a
+          routerLink="/products"
+          routerLinkActive="text-purple-700 dark:text-purple-300 font-semibold"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors duration-200 cursor-pointer"
+          >Products</a
+        >
+        <a
+          routerLink="/contact"
+          routerLinkActive="text-purple-700 dark:text-purple-300 font-semibold"
+          class="text-gray-700 dark:text-gray-300 hover:text-purple-700 dark:hover:text-purple-300 font-medium transition-colors duration-200 cursor-pointer"
+          >Contact</a
+        >
+      </div>
+      <app-theme-toggle></app-theme-toggle>
+    </div>
+  </div>
+
+  <!-- Mobile Menu (Hidden by Default) -->
+  <div class="md:hidden" id="navbar-menu" [class.hidden]="!isMenuOpen">
+    <div class="px-2 pt-2 pb-3 space-y-1 sm:px-3">
+      <a
+        routerLink="/home"
+        routerLinkActive="bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300"
+        >Home</a
+      >
+      <a
+        routerLink="/about"
+        routerLinkActive="bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300"
+        >About</a
+      >
+      <a
+        routerLink="/products"
+        routerLinkActive="bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300"
+        >Products</a
+      >
+      <a
+        routerLink="/contact"
+        routerLinkActive="bg-purple-50 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300"
+        class="block px-3 py-2 rounded-md text-base font-medium text-gray-700 dark:text-gray-300 hover:bg-purple-50 dark:hover:bg-purple-900/30 hover:text-purple-700 dark:hover:text-purple-300"
+        >Contact</a
+      >
+    </div>
+  </div>
+</nav>
