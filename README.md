@@ -38,7 +38,26 @@
 
 ---
 
-## 🎥 Demo Video
+## 📸 Screenshots
+
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_1.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_2.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_3.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_4.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_5.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_6.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_7.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_8.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_9.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_10.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_10.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_12.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_13.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_14.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_15.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_16.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_17.png?raw=true)
+![image alt](https://github.com/maomenraafat/Ez-Shop/blob/main/screenshots/Screenshot_18.png?raw=true)
 
 ---
 
